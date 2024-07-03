@@ -1,0 +1,41 @@
+
+
+<mat-card>
+    <mat-card-content>
+        <form [formGroup]="userform" (ngSubmit)="onadduser()">
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label><strong>Username</strong></mat-label>
+                    <input matInput placeholder="enter your username..." formControlName="username">
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label><strong>User Profile</strong></mat-label>
+                    <input matInput placeholder="insert profile url..." formControlName="userProfile">
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field appearance="outline">
+                    <mat-label>Select Role</mat-label>
+                    <mat-select formControlName="userRole">
+                      <mat-option value="Admin">Admin</mat-option>
+                      <mat-option value="Candidate">Candidate</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+            <div class="text-right">
+                <button mat-raised-button color="primary"
+                type="button"
+                (click)="onupdateuser()"
+                [disabled]="!canUpdate"
+                *ngIf="isinEditmode"
+                >Update</button>
+                <button mat-raised-button color="accent"
+                *ngIf="!isinEditmode"
+                type="submit"
+                >Add User</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

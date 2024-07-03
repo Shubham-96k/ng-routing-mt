@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-12 my-2 text-right">
+            <button mat-mini-fab color="accent" aria-label="Example icon button with a bookmark icon"
+            routerLink="/users/addusers"
+            >
+                <mat-icon>add</mat-icon>
+              </button>
+        </div>
+        <div class="col-md-6">
+            <ul class="list-group" *ngIf="userarr else nousers">
+                <li class="list-group-item mb-2 tex-capitalize" 
+                *ngFor="let user of userarr"
+                (click)="onActive(user.userId)"
+                [ngClass]="{
+                    'active' : selectedid === user.userId
+                }"
+                [routerLink]="['/users', user.userId]"
+                [queryParams]="{
+                    userRole : user.userRole
+                }"
+                >
+                <Strong>{{user.username}}</Strong>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+<ng-template #nousers>
+    <p class="alert alert-info">
+        No users Available!!!
+    </p>
+</ng-template>

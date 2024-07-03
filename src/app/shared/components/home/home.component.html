@@ -1,0 +1,16 @@
+
+
+<div class="d-flex justify-content-center align-items-center info">
+    <p>
+        <ng-container *ngIf="foradmin">
+            <button mat-raised-button class="mr-4" color="accent"
+        routerLink="/users"
+        ><strong>Go to Users</strong></button>
+        </ng-container>
+        <ng-container *ngIf="foruser">
+            <button mat-raised-button color="accent"
+        routerLink="/products"
+        ><strong>Go to Products</strong></button>
+        </ng-container>
+    </p>
+</div>

@@ -1,0 +1,39 @@
+
+
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-12 text-right my-2">
+            <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon"
+            routerLink="/products/addproduct"
+            >
+                <mat-icon>add</mat-icon>
+              </button>
+        </div>
+        <div class="col-md-6">
+            <ul class="list-group" *ngIf="prodarr else noprod">
+                <li class="list-group-item text-capitalize mb-3 font-weight-bold" *ngFor="let prod of prodarr" 
+                (click)="selectedid = prod.pId"
+                [ngClass]="{
+                    active : selectedid === prod.pId
+                }"
+                [routerLink]="[prod.pId]"
+                [queryParams]="{
+                    canEdit : prod.canReturn
+                }"
+                >
+                {{prod.pname}}
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+<ng-template #noprod>
+    <p class="alert alert-info">
+        No Product Available !!!
+    </p>
+</ng-template>

@@ -1,0 +1,69 @@
+
+
+
+<main class="main d-flex justify-content-center align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                
+                <mat-card>
+                    <mat-card-title>
+                        Sign In
+                    </mat-card-title>
+                    <mat-card-content>
+                        <form [formGroup]="loginform" (ngSubmit)="onuserlogin()">
+                            <div class="form-group">
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <mat-label><strong>Email</strong></mat-label>
+                                    <input matInput placeholder="enter your email..." formControlName="email">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <mat-label><strong>Password</strong></mat-label>
+                                    <input type="password" matInput placeholder="enter your email..." formControlName="password">
+                                </mat-form-field>
+                            </div>
+                            <div class="text-right">
+                                <button mat-raised-button color="primary"
+                                type="submit"
+                                >Sign In</button>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div (click)="show = !show" class="alert alert-info info">
+                                    Show Credentials
+                                </div>
+                                <div
+                                *ngIf="show" class="alert alert-info"
+                                
+                                >
+                                    <p>
+                                        <strong>Buyer</strong> : 
+                                            jhon@gmail.com
+                                    </p>
+                                    <p>
+                                        <strong>Admin</strong> : 
+                                            june@gmail.com
+                                    </p>
+                                    <p>
+                                        <strong>Password</strong> :
+                                            zaq1ZAQ!
+                                    </p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                       
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>    
+    
+</main>
+
+
+
+

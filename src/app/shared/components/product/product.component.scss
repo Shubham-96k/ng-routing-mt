@@ -1,0 +1,16 @@
+
+
+li{
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+::ng-deep{
+    .mat-card:not([class*=mat-elevation-z]){
+        box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
+    }
+}
+
+
+li:active, li:hover{
+    box-shadow: none;
+}

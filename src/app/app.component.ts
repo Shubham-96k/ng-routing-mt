@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-routing-mt';
+
+
+  userloginstate !: boolean;
+
+  constructor(
+    private _auth : AuthService
+  ){
+    this._auth.userLoginSub$.subscribe(res => {
+      this.userloginstate = res;
+    })
+  }
+
+
 }

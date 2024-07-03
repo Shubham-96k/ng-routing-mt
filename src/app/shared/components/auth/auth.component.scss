@@ -1,0 +1,25 @@
+
+
+.main{
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://img.freepik.com/free-photo/blue-curve-abstract-background-with-design-space_53876-104767.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1712361600&semt=ais');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.mat-form-field,.mat-card{
+    width: 100%;
+}
+.mat-card-title{
+    margin : 3rem 0;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.info{
+    cursor: pointer;
+    text-decoration: underline;
+}
