@@ -37,7 +37,6 @@ export class AuthComponent implements OnInit {
     if(this.loginform.valid){
       let obj = this.loginform.value;
       this._auth.onlogin(obj);
-      this._snack.opensnackbar('Successfully Logged In')
     }else{
       this._snack.opensnackbar('Invalid email and password')
       this.loginform.reset();
